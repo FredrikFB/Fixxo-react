@@ -1,11 +1,11 @@
 footer{
     display: flex;
     flex-direction: column;
-    justify-content: center;
     background-color: $color-gray-20;
     align-items: center;
     text-align: center;
-    padding: 25px;
+    padding-top: 0;
+    padding-bottom: 15px;
     
     .social-media{
         margin-bottom: 25px;

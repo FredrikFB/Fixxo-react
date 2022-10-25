@@ -1,25 +1,34 @@
 .main-menu{
-    .container{
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        color: $color-darkblue;
-        padding-top: 20px;
-        padding-bottom: 20px;
-    }
+    display: grid;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "logo menuicons"
+                            "menulinks menulinks";
+
     .logo{
+        grid-area: logo;
         font-size: 35px;
         font-weight: $font-weight-bold;
         color: $color-darkblue;
         text-decoration: none;
+
+        &:hover {
+            color: $color-darkblue;
+            text-decoration: none;
+        }
     }
     .menu-links{
+        grid-area: menulinks;
+        display: none;
         font-weight: $font-weight-medium;
+        height: 100%;   
+        
         .menu-link{
             color: $color-darkblue;
             text-decoration: none;
-            margin: 0 1rem;
-            font-size: 1.2rem;
+            margin: 10px 15px;
+
             
             &:hover{
                 color: $color-red;
@@ -30,6 +39,7 @@
         }
     }
     .menu-icons{
+        grid-area: menuicons;
         display: flex;
         justify-content: flex-end;
         align-items: center;
@@ -62,5 +72,33 @@
             background-color: $color-darkblue;
             box-shadow: 0 0 6px 4px $color-shadow;
         }
+        .btn-menu-icon{
+            color: $color-white;
+            background-color: $color-darkblue;
+            border: none;
+            outline: none;
+        }
+    }
+}
+
+@media(min-width: 1200px){
+    .main-menu{        
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-areas: "logo menulinks menuicons";
+        padding-top: 20px;
+        padding-bottom: 20px;
+        
+        .menu-links{
+            grid-area: menulinks;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: $font-weight-medium;
+            height: 100%;
+            width: 100%;   
+        }        
+
+        
     }
 }
