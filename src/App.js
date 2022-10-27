@@ -12,10 +12,6 @@ import ShoppingCartView from './views/ShoppingCartView';
 import NotFoundView from './views/NotFoundView';
 
 
-
-
-
-
 function App() {
   return (
     <BrowserRouter>

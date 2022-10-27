@@ -24,8 +24,6 @@ const ProductCard = ({product}) => {
                     <button onClick={addToCart} className="menu-link" ><i className="fa-regular fa-bag-shopping"></i></button>
                 </div>
                 <NavLink to={`/products/${product.id}`} className="btn-card-theme btn-theme d-xl-none">
-                    <span className="corner-left"></span>
-                    <span className="corner-right"></span>
                     QUICK VIEW
                 </NavLink>
             </div>
@@ -39,7 +37,7 @@ const ProductCard = ({product}) => {
                     <i className="fa-solid fa-star"></i>
                     <i className="fa-regular fa-star"></i>
                 </div>
-                <span className="old-price"></span>
+                <span className="old-price">{product.oldPrice}</span>
                 <span className="new-price">{product.price}</span>
             </div>
             <div className="card-background"></div>
