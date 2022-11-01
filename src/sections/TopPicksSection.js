@@ -12,7 +12,7 @@ const TopPicksSection = () => {
                     <div className="banner-text">
                         <h2>Pamela Reaf's</h2>
                         <h2>Top Picks</h2>
-                        <button className="btn-theme mt-3">FLASH SALE</button>
+                        <button className="btn-dark mt-3">FLASH SALE</button>
                     </div>
                 </div>
                 <div className="banner2">
@@ -20,7 +20,7 @@ const TopPicksSection = () => {
                     <div className="banner-text">
                         <h2>Let's Be</h2>
                         <h2>Conscious</h2>
-                        <button className="btn-theme mt-3">SHOP NOW</button>
+                        <button className="btn-white mt-3">SHOP NOW</button>
                     </div>
                 </div>
             </div>

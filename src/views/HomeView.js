@@ -3,7 +3,9 @@ import MainMenuSection from '../sections/MainMenuSection'
 import ShowcaseSection from '../sections/ShowcaseSection'
 import TopPicksSection from '../sections/TopPicksSection'
 import ProductGridSection from '../sections/ProductGridSection'
+import FlashSaleSection from '../sections/FlashSaleSection'
 import FooterSection from '../sections/FooterSection'
+
 
 const HomeView = () => {
   window.top.document.title = 'Fixxo.'
@@ -28,6 +30,7 @@ const HomeView = () => {
       <ProductGridSection title="Featured Products" products={products} />
       <ProductGridSection title="Top Products" products={topProducts} />
       <TopPicksSection />
+      <FlashSaleSection products={topProducts}/>
       <FooterSection />
     </>
   )

@@ -7,6 +7,8 @@
 @import "./core/base";
 @import "./core/buttons";
 
+@import "./components/ProductCard";
+
 //sections
 @import "./sections/MainMenuSection";
 @import "./sections/BreadcrumbSection";
@@ -15,4 +17,5 @@
 @import "./sections/ShowcaseSection";
 @import "./sections/ProductGridSection";
 @import "./sections/TopPickSection";
+@import "./sections/FlashSaleSection";
 @import "./sections/FooterSection";
