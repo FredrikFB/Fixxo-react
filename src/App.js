@@ -1,3 +1,4 @@
+import React, {useEffect, useState} from 'react'
 import './style.min.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import HomeView from './views/HomeView';
@@ -10,24 +11,48 @@ import CompareView from './views/CompareView';
 import WishListView from './views/WishListView';
 import ShoppingCartView from './views/ShoppingCartView';
 import NotFoundView from './views/NotFoundView';
-
+import { ProductContext } from './contexts/contexts';
 
 function App() {
+
+
+  const [products, setProducts] = useState({
+    allProducts: [],
+    featuredProducts: []
+  })
+
+
+  useEffect(() => {
+    const fetchAllProducts =async () => {
+      let result = await fetch('https://win22-webapi.azurewebsites.net/api/products')
+      setProducts({...products, allPrducts: await result.json()})
+    }
+    fetchAllProducts(); 
+
+    const fetchFeaturedProducts =async () => {
+      let result = await fetch('https://win22-webapi.azurewebsites.net/api/products?take=8')
+      setProducts({...products, featuredProducts: await result.json()})
+    }
+    fetchFeaturedProducts(); 
+
+  }, [setProducts])
+
   return (
     <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<HomeView />} />
-        <Route path="/categories" element={<CategoriesView />} />
-        <Route path="/products" element={<ProductsView />} />
-        <Route path="/products/:id" element={<ProductDetailsView />} />
-        <Route path="/contacts" element={<ContactsView />} />
-        <Route path="/search" element={<SearchView />} />
-        <Route path="/compare" element={<CompareView />} />
-        <Route path="/wichlist" element={<WishListView />} />
-        <Route path="/shoppingcart" element={<ShoppingCartView />} />
-        
-        <Route path="*" element={<NotFoundView />} />
-      </Routes>
+      <ProductContext.Provider value={products}>
+        <Routes>
+          <Route path="/" element={<HomeView />} />
+          <Route path="/categories" element={<CategoriesView />} />
+          <Route path="/products" element={<ProductsView />} />
+          <Route path="/products/:id" element={<ProductDetailsView />} />
+          <Route path="/contacts" element={<ContactsView />} />
+          <Route path="/search" element={<SearchView />} />
+          <Route path="/compare" element={<CompareView />} />
+          <Route path="/wichlist" element={<WishListView />} />
+          <Route path="/shoppingcart" element={<ShoppingCartView />} />        
+          <Route path="*" element={<NotFoundView />} />
+        </Routes>
+      </ProductContext.Provider>
     </BrowserRouter>
   );
 }
