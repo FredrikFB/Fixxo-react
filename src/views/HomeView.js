@@ -4,14 +4,17 @@ import ShowcaseSection from '../sections/ShowcaseSection'
 import TopPicksSection from '../sections/TopPicksSection'
 import ProductGridSection from '../sections/ProductGridSection'
 import FlashSaleSection from '../sections/FlashSaleSection'
+import WebInfoSection from '../sections/WebInfoSection'
 import FooterSection from '../sections/FooterSection'
-import { ProductContext } from '../contexts/contexts'
+import { FeaturedProductsContext, ProductContext } from '../contexts/contexts'
+
 
 
 
 const HomeView = () => {
   window.top.document.title = 'Fixxo.'
-  const productContext = useContext(ProductContext)
+  const products = useContext(ProductContext)
+  const featured = useContext(FeaturedProductsContext)
 
   const [topProducts, setTopProducts] = useState([ //behövs inte längre
     {id: 1, name: "Modern Black Blouse", category: "Fashion", price: "$35.00", oldPrice: "", rating: 5, img: "https://images.pexels.com/photos/963486/pexels-photo-963486.jpeg?cs=srgb&dl=pexels-paula-schmidt-963486.jpg&fm=jpg&_gl=1*c4smps*_ga*NDYzNDMwOTUxLjE2NjY2ODk1NzA.*_ga_8JE65Q40S6*MTY2NjY5MzQ3OC4yLjEuMTY2NjY5MzU4Mi4wLjAuMA.."},
@@ -24,10 +27,11 @@ const HomeView = () => {
     <>
       <MainMenuSection />
       <ShowcaseSection />
-      <ProductGridSection title="Featured Products" items={productContext.featuredProducts} />
+      <ProductGridSection title="Featured Products" items={featured} />
       {/* <ProductGridSection title="Top Products" products={topProducts} /> */}
       <TopPicksSection />
-      <FlashSaleSection products={topProducts}/>
+      <FlashSaleSection products={products}/>
+      <WebInfoSection />
       <FooterSection />
     </>
   )
