@@ -38,7 +38,7 @@ const ProductCard = ({product}) => {
                     <i className="fa-regular fa-star"></i>
                 </div>
                 <span className="old-price">{product.oldPrice}</span>
-                <span className="new-price">{product.price}</span>
+                <span className="new-price">${product.price}</span>
             </div>
             <div className="card-background"></div>
         </div>

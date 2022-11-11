@@ -4,6 +4,8 @@ import BreadcrumbSection from '../sections/BreadcrumbSection'
 import FooterSection from '../sections/FooterSection'
 
 const ProductsView = () => {
+  window.top.document.title = 'Products | Fixxo.'
+
   return (
     <>
       <MainMenuSection />

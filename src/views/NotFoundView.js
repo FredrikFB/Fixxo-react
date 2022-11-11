@@ -1,13 +1,16 @@
 import React from 'react'
 import MainMenuSection from '../sections/MainMenuSection'
 import FooterSection from '../sections/FooterSection'
+import notFoundImg from '../assets/images/NotFound.jpg'
 
 const NotFoundView = () => {
+  window.top.document.title = 'Not Found | Fixxo.'
+  
   return (
     <>
       <MainMenuSection />
-      <div className='container d-flex justify-content-center align-items-center ' style={{ height: "500px" }}>
-        <h1>404 - Page Not Found</h1>
+      <div className='not-found container' >
+        <img src={notFoundImg} alt='404 not found'/>
       </div>
       <div style={{ position: "fixed", bottom: "0", width:"100%" }}>
         <FooterSection />
