@@ -11,11 +11,11 @@ const WebInfoSection = ({img, title, paragraph}) => {
             <hr/>
         </div>
         <div className="web-info">
-            <div className="container">
-                <InfoIcons img={iconSupport} title="Customer Support" paragraph="Village did removed enjoyed explain talking."/>
-                <InfoIcons img={iconPayment} title="Secured Payment" paragraph="Village did removed enjoyed explain talking."/>
-                <InfoIcons img={iconTruck} title="Free Home Delivery" paragraph="Village did removed enjoyed explain talking."/>
-                <InfoIcons img={iconTruck} title="30 Day Reuters" paragraph="Village did removed enjoyed explain talking."/>
+            <div className="container row row-cols-1 row-cols-xl-4 g-4">
+              <InfoIcons img={iconSupport} title="Customer Support" paragraph="Village did removed enjoyed explain talking."/>
+              <InfoIcons img={iconPayment} title="Secured Payment" paragraph="Village did removed enjoyed explain talking."/>
+              <InfoIcons img={iconTruck} title="Free Home Delivery" paragraph="Village did removed enjoyed explain talking."/>
+              <InfoIcons img={iconTruck} title="30 Day Reuters" paragraph="Village did removed enjoyed explain talking."/>
             </div>
         </div>
     </section>

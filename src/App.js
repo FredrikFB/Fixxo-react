@@ -20,7 +20,7 @@ function App() {
 
   useEffect(() => {
     const fetchAllProducts =async () => {
-      let result = await fetch('https://win22-webapi.azurewebsites.net/api/products?take=4')
+      let result = await fetch('https://win22-webapi.azurewebsites.net/api/products')
       setProducts(await result.json())
     }
     fetchAllProducts(); 
@@ -31,7 +31,7 @@ function App() {
     }
     fetchFeaturedProducts(); 
 
-  }, [setProducts])
+  }, [setProducts, setFeatured])
 
   return (
     <BrowserRouter>

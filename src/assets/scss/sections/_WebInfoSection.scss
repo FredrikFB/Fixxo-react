@@ -5,10 +5,13 @@
 
 .web-info{
     margin-bottom: 60px;
+    display: flex;
+    justify-content: center;
+
     .container{
         max-width: 1110px;
         display: flex;
-        flex-direction: column;
+        justify-content: center;
         align-items: center;
     }
     .info-box{
@@ -28,12 +31,12 @@
         }
     }
 }
-@media (min-width: 1600px){
-    .web-info{
-        .container{
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-        }
-    }
-}
+// @media (min-width: 1600px){
+//     .web-info{
+//         .container{
+//             display: flex;
+//             flex-direction: row;
+//             justify-content: space-between;
+//         }
+//     }
+// }

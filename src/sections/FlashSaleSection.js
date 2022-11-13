@@ -16,7 +16,7 @@ const FlashSaleSection = ({products}) => {
                 <div className="liten">
                     <div className="row row-cols-1 row-cols-md-2 g-4">
                         {
-                        products.map(product => <ProductCard key={product.articleNumber} product={product} />)
+                        products.slice(9, 13).map(product => <ProductCard key={product.articleNumber} product={product} />)
                         }
                     </div>
                 </div>
@@ -27,7 +27,7 @@ const FlashSaleSection = ({products}) => {
                 <div className="liten">
                     <div className="row row-cols-1 row-cols-md-2 g-4">
                         {
-                        products.map(product => <ProductCard key={product.articleNumber} product={product} />)
+                        products.slice(14, 18).map(product => <ProductCard key={product.articleNumber} product={product} />)
                         }
                     </div>
                 </div>
