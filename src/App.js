@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react'
+import React from 'react' 
 import './style.min.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import HomeView from './views/HomeView';
@@ -11,32 +11,14 @@ import CompareView from './views/CompareView';
 import WishListView from './views/WishListView';
 import ShoppingCartView from './views/ShoppingCartView';
 import NotFoundView from './views/NotFoundView';
-import { ProductContext, FeaturedProductsContext } from './contexts/contexts';
+import { ProductProvider } from './contexts/ProductContexts';
 
 function App() {
-  const [products, setProducts] = useState([])
-  const [featured, setFeatured] = useState([])
 
-
-  useEffect(() => {
-    const fetchAllProducts =async () => {
-      let result = await fetch('https://win22-webapi.azurewebsites.net/api/products')
-      setProducts(await result.json())
-    }
-    fetchAllProducts(); 
-
-    const fetchFeaturedProducts =async () => {
-      let result = await fetch('https://win22-webapi.azurewebsites.net/api/products?take=8')
-      setFeatured(await result.json())
-    }
-    fetchFeaturedProducts(); 
-
-  }, [setProducts, setFeatured])
 
   return (
     <BrowserRouter>
-      <ProductContext.Provider value={products}>
-      <FeaturedProductsContext.Provider value={featured}>
+      <ProductProvider>
         <Routes>
           <Route path="/" element={<HomeView />} />
           <Route path="/categories" element={<CategoriesView />} />
@@ -45,12 +27,11 @@ function App() {
           <Route path="/contacts" element={<ContactsView />} />
           <Route path="/search" element={<SearchView />} />
           <Route path="/compare" element={<CompareView />} />
-          <Route path="/wichlist" element={<WishListView />} />
+          <Route path="/wishlist" element={<WishListView />} />
           <Route path="/shoppingcart" element={<ShoppingCartView />} />        
           <Route path="*" element={<NotFoundView />} />
         </Routes>
-      </FeaturedProductsContext.Provider >
-      </ProductContext.Provider>
+      </ProductProvider>
     </BrowserRouter>
   );
 }
